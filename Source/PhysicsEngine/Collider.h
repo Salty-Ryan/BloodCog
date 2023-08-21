@@ -2,11 +2,15 @@
 
 class Collider {
 public:
-    Collider();
-    ~Collider();
+    Collider();  // Constructor.
+    ~Collider();  // Destructor.
 
-    bool checkCollision(const Collider& other);  // Check if this collider collides with another.
+    bool checkCollision(const Collider& other) const;  // Check if this collider collides with another.
 
 private:
-    // Shape data (e.g., box, sphere) for the collider.
+    // TODO: Add private member variables for collider shape, position, size, etc.
+    // Example:
+    // ShapeType shape;  // e.g., BOX, SPHERE, etc.
+    // Vector3 position;
+    // Vector3 size;
 };
