@@ -1,38 +1,30 @@
-#include "World.h"
-#include "Logger.h"
 #include "Chunk.h"
+#include "Logger.h"
 
-World::World() {
-    Logger::log("World constructor called.");
-    generateWorld();  // Generate the world when the World object is created.
+Chunk::Chunk() {
+    Logger::log("Chunk constructor called.");
 }
 
-World::~World() {
-    Logger::log("World destructor called.");
+Chunk::~Chunk() {
+    Logger::log("Chunk destructor called.");
 }
 
-void World::generateWorld() {
-    Logger::log("Generating world.");
+void Chunk::generateTerrain() {
+    Logger::log("Generating terrain for chunk.");
 
-    // Generate a fixed number of chunks for demonstration purposes.
-    for (int i = 0; i < 10; ++i) {
-        Chunk chunk;
-        chunk.generateTerrain();  // Generate terrain for each chunk.
-        chunks.push_back(chunk);
-    }
+    // TODO: Implement terrain generation logic.
+    // This could involve using noise functions, heightmaps, or other methods.
 }
 
-void World::renderWorld() {
-    Logger::log("Rendering world.");
+void Chunk::render() {
+    Logger::log("Rendering chunk.");
 
-    // Render all chunks.
-    for (auto& chunk : chunks) {
-        chunk.render();
-    }
+    // Render the terrain.
+    // TODO: Implement terrain rendering logic.
+
+    // Render entities within the chunk.
+    // TODO: Implement entity rendering logic.
 }
-
-void World::updateWorld(float deltaTime) {
-    Logger::log("Updating world.");
 
     // Update each chunk.
     for (auto& chunk : chunks) {
