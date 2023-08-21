@@ -1,5 +1,7 @@
 #include "Initialization.h"
-// Include other necessary headers, e.g., AssetManager, RenderingEngine, PhysicsEngine, etc.
+#include "AssetManager.h"       // Assuming you have this class
+#include "RenderingEngine.h"    // Assuming you have this class
+#include "PhysicsEngine.h"      // Assuming you have this class
 
 Initialization::Initialization() : isInitialized(false) {
     Logger::log("Initialization constructor called.");
@@ -16,7 +18,7 @@ bool Initialization::initializeEngine() {
     Logger::log("Initializing engine.");
 
     // Load assets.
-    // AssetManager::getInstance().loadAllAssets();  // Placeholder. You'll need an AssetManager class.
+    AssetManager::getInstance().loadAllAssets();  // Assuming you have a singleton pattern for AssetManager
 
     // Initialize the audio engine.
     if (!audioEngine.initialize()) {
@@ -25,10 +27,16 @@ bool Initialization::initializeEngine() {
     }
 
     // Initialize the rendering engine.
-    // RenderingEngine::getInstance().initialize();  // Placeholder. You'll need a RenderingEngine class.
+    if (!RenderingEngine::getInstance().initialize()) {
+        Logger::log("Failed to initialize rendering engine.");
+        return false;
+    }
 
     // Initialize the physics engine.
-    // PhysicsEngine::getInstance().initialize();  // Placeholder. You'll need a PhysicsEngine class.
+    if (!PhysicsEngine::getInstance().initialize()) {
+        Logger::log("Failed to initialize physics engine.");
+        return false;
+    }
 
     // Set initial game state.
     // TODO: Set player's initial position, set up game world, etc.
@@ -44,10 +52,11 @@ void Initialization::shutdownEngine() {
     audioEngine.cleanup();
 
     // Shutdown the rendering engine.
-    // RenderingEngine::getInstance().shutdown();  // Placeholder.
+    RenderingEngine::getInstance().shutdown();
 
     // Shutdown the physics engine.
-    // PhysicsEngine::getInstance().shutdown();  // Placeholder.
+    PhysicsEngine::getInstance().shutdown();
 
     isInitialized = false;
 }
+
