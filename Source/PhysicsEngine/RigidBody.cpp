@@ -1,9 +1,22 @@
-#include "Rigidbody.h"
+#include "RigidBody.h"
+#include "Logger.h"
 
-Rigidbody::Rigidbody() : mass(1.0f), velocityX(0), velocityY(0), velocityZ(0) {}
+RigidBody::RigidBody() {
+    Logger::log("RigidBody constructor called.");
+}
 
-Rigidbody::~Rigidbody() {}
+RigidBody::~RigidBody() {
+    Logger::log("RigidBody destructor called.");
+}
 
-void Rigidbody::applyForce(float x, float y, float z) {
-    // Apply force and update velocities.
+void RigidBody::applyForce(const Vector3& force) {
+    // TODO: Apply the given force to this rigid body.
+
+    Logger::log("Applying force to RigidBody.");
+}
+
+void RigidBody::update(float deltaTime) {
+    // TODO: Update the rigid body's state based on forces, velocity, etc.
+
+    Logger::log("Updating RigidBody.");
 }
