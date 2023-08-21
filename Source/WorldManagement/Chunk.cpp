@@ -1,13 +1,22 @@
 #include "Chunk.h"
+#include "Logger.h"
 
-Chunk::Chunk() {}
-
-Chunk::~Chunk() {}
-
-void Chunk::generate() {
-    // Generate the chunk.
+Chunk::Chunk() {
+    Logger::log("Chunk constructor called.");
 }
 
-void Chunk::draw() {
-    // Render the chunk.
+Chunk::~Chunk() {
+    Logger::log("Chunk destructor called.");
+}
+
+void Chunk::generateTerrain() {
+    // TODO: Implement terrain generation for this chunk.
+
+    Logger::log("Generating terrain for chunk.");
+}
+
+void Chunk::render() {
+    // TODO: Render the chunk's terrain and any entities within it.
+
+    Logger::log("Rendering chunk.");
 }
