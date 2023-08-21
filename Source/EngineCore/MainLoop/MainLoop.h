@@ -11,9 +11,8 @@ public:
 private:
     bool running = true;  // Flag to determine if the game loop is running.
 
-    // TODO: Add other private member variables or methods as needed.
-    // Example:
-    // void handleInput();
-    // void update();
-    // void render();
+    // Private member functions for different stages of the game loop.
+    void handleInput();  // Handle user input.
+    void update();       // Update game state.
+    void render();       // Render the game.
 };
