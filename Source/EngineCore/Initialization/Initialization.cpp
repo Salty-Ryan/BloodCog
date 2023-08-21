@@ -1,16 +1,8 @@
 #include "Initialization.h"
+// Include other necessary headers, e.g., AssetManager, RenderingEngine, PhysicsEngine, etc.
 
 Initialization::Initialization() : isInitialized(false) {
     Logger::log("Initialization constructor called.");
-
-    // Load assets.
-    // TODO: Load textures, models, sounds, etc.
-
-    // Set up game systems.
-    // TODO: Initialize rendering engine, physics engine, audio system, etc.
-
-    // Set initial game state.
-    // TODO: Set player's initial position, set up game world, etc.
 }
 
 Initialization::~Initialization() {
@@ -23,13 +15,23 @@ Initialization::~Initialization() {
 bool Initialization::initializeEngine() {
     Logger::log("Initializing engine.");
 
+    // Load assets.
+    // AssetManager::getInstance().loadAllAssets();  // Placeholder. You'll need an AssetManager class.
+
     // Initialize the audio engine.
     if (!audioEngine.initialize()) {
         Logger::log("Failed to initialize audio engine.");
         return false;
     }
 
-    // TODO: Initialize other core engine components, like RenderingEngine, PhysicsEngine, etc.
+    // Initialize the rendering engine.
+    // RenderingEngine::getInstance().initialize();  // Placeholder. You'll need a RenderingEngine class.
+
+    // Initialize the physics engine.
+    // PhysicsEngine::getInstance().initialize();  // Placeholder. You'll need a PhysicsEngine class.
+
+    // Set initial game state.
+    // TODO: Set player's initial position, set up game world, etc.
 
     isInitialized = true;
     return true;
@@ -41,7 +43,11 @@ void Initialization::shutdownEngine() {
     // Shutdown the audio engine.
     audioEngine.cleanup();
 
-    // TODO: Shutdown other core engine components.
+    // Shutdown the rendering engine.
+    // RenderingEngine::getInstance().shutdown();  // Placeholder.
+
+    // Shutdown the physics engine.
+    // PhysicsEngine::getInstance().shutdown();  // Placeholder.
 
     isInitialized = false;
 }
