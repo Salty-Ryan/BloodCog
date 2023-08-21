@@ -1,13 +1,20 @@
 #include "Mesh.h"
+#include "Logger.h"
 
-Mesh::Mesh() {}
+Mesh::Mesh() {
+    Logger::log("Mesh constructor called.");
+}
 
-Mesh::~Mesh() {}
+Mesh::~Mesh() {
+    Logger::log("Mesh destructor called.");
+}
 
 void Mesh::loadFromOBJ(const char* objPath) {
-    // Load mesh data from an OBJ file.
+    // TODO: Implement loading mesh data from an OBJ file.
+    Logger::log("Loading mesh from OBJ.");
 }
 
 void Mesh::draw() {
-    // Render the mesh.
+    // TODO: Implement rendering logic for the mesh.
+    Logger::log("Rendering mesh.");
 }
