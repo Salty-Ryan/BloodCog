@@ -1,25 +1,12 @@
-#include "ConfigLoader.h"
 #include "Logger.h"
+#include <iostream>
 
-ConfigLoader::ConfigLoader() {
-    Logger::log("ConfigLoader constructor called.");
+void Logger::log(const std::string& message) {
+    // TODO: Implement logging logic. For now, we'll just print to the console.
+    std::cout << "[LOG] " << message << std::endl;
 }
 
-ConfigLoader::~ConfigLoader() {
-    Logger::log("ConfigLoader destructor called.");
-}
-
-bool ConfigLoader::loadConfig(const std::string& filePath) {
-    // TODO: Load configuration from the given file path.
-    // This might involve reading the file, parsing its contents, and storing the data in the configData map.
-
-    Logger::log("Loading configuration from: " + filePath);
-    return true;  // Placeholder return.
-}
-
-void ConfigLoader::saveConfig(const std::string& filePath) {
-    // TODO: Save current configuration to the given file path.
-    // This might involve iterating over the configData map and writing the key-value pairs to the file.
-
-    Logger::log("Saving configuration to: " + filePath);
+void Logger::error(const std::string& message) {
+    // TODO: Implement error logging logic. For now, we'll just print to the console.
+    std::cerr << "[ERROR] " << message << std::endl;
 }
