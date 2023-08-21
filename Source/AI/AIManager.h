@@ -1,5 +1,10 @@
 #pragma once
 
+#include <vector>
+
+class AIAgent;  // Forward declaration for AIAgent class.
+class BehaviorTree;  // Forward declaration for BehaviorTree class.
+
 class AIManager {
 public:
     AIManager();  // Constructor.
@@ -10,8 +15,6 @@ public:
     void cleanup();  // Clean up and release resources.
 
 private:
-    // TODO: Add private member variables for AI agents, behaviors, etc.
-    // Example:
-    // std::vector<AIAgent*> agents;
-    // BehaviorTree* behaviorTree;
+    std::vector<AIAgent*> agents;  // List of AI agents.
+    BehaviorTree* behaviorTree;  // Behavior tree for AI logic.
 };
