@@ -1,5 +1,9 @@
 #pragma once
 
+#include "Logger.h"
+#include "AudioEngine/AudioEngine.h"
+// Include other core engine components as needed.
+
 class Initialization {
 public:
     Initialization();  // Constructor.
@@ -9,8 +13,8 @@ public:
     void shutdownEngine();  // Shutdown the game engine and release resources.
 
 private:
-    // TODO: Add private member variables for initialization state, loaded assets, etc.
-    // Example:
-    // bool isInitialized;
-    // AssetManager assetManager;
+    // Member variables for initialization state, loaded assets, etc.
+    bool isInitialized;
+    AudioEngine audioEngine;
+    // Other core engine components, like RenderingEngine, PhysicsEngine, etc.
 };
