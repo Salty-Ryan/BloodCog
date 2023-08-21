@@ -1,7 +1,7 @@
 #include "MainLoop.h"
-#include "Logger.h"  // Assuming you have a Logger for logging purposes.
+#include "Logger.h"
 
-MainLoop::MainLoop() : isRunning(true) {  // Added a member variable to control the loop.
+MainLoop::MainLoop() {
     Logger::log("MainLoop constructor called.");
 }
 
@@ -9,33 +9,22 @@ MainLoop::~MainLoop() {
     Logger::log("MainLoop destructor called.");
 }
 
-void MainLoop::run() {
-    Logger::log("Starting the main game loop...");
+void MainLoop::start() {
+    // TODO: Implement the main game loop logic. This might involve updating game state, rendering, handling input, etc.
 
-    while (isRunning) {
-        handleEvents();
-        update();
-        render();
+    Logger::log("Starting main game loop.");
+
+    while (running) {
+        // Example loop:
+        // handleInput();
+        // update();
+        // render();
     }
-
-    Logger::log("Main game loop terminated.");
 }
 
-void MainLoop::handleEvents() {
-    // Handle user input, window events, etc.
-    
-    // TODO: Add event handling code here.
-
-    // Example: If a quit event is detected, set isRunning to false.
-    // if (event == QUIT_EVENT) {
-    //     isRunning = false;
-    // }
-}
-
-void MainLoop::update() {
-    // Update game state, physics, AI, etc.
-    
-    // TODO: Add game update logic here.
+void MainLoop::stop() {
+    running = false;
+    Logger::log("Stopping main game loop.");
 }
 
 void MainLoop::render() {
