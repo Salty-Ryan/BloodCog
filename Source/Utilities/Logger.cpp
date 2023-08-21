@@ -1,13 +1,12 @@
 #include "Logger.h"
+#include <iostream>
 
-void Logger::logMessage(const char* message) {
-    // Log a message.
+void Logger::log(const std::string& message) {
+    // TODO: Implement logging logic. For now, we'll just print to the console.
+    std::cout << "[LOG] " << message << std::endl;
 }
 
-void Logger::logWarning(const char* warning) {
-    // Log a warning.
-}
-
-void Logger::logError(const char* error) {
-    // Log an error.
+void Logger::error(const std::string& message) {
+    // TODO: Implement error logging logic. For now, we'll just print to the console.
+    std::cerr << "[ERROR] " << message << std::endl;
 }
