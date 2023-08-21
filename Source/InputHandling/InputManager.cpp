@@ -1,15 +1,34 @@
 #include "InputManager.h"
+#include "Logger.h"
 
-InputManager::InputManager() {}
-
-InputManager::~InputManager() {}
-
-bool InputManager::isKeyPressed(int keyCode) {
-    // Check if a key is pressed.
-    return false;  // Placeholder.
+InputManager::InputManager() {
+    Logger::log("InputManager constructor called.");
 }
 
-bool InputManager::isMousePressed(int buttonCode) {
-    // Check if a mouse button is pressed.
-    return false;  // Placeholder.
+InputManager::~InputManager() {
+    cleanup();
+    Logger::log("InputManager destructor called.");
+}
+
+bool InputManager::initialize() {
+    Logger::log("Initializing Input manager...");
+
+    // TODO: Initialization logic.
+
+    Logger::log("Input manager initialized.");
+    return true;
+}
+
+void InputManager::handleInput() {
+    // TODO: Input handling logic.
+
+    Logger::log("Handling input.");
+}
+
+void InputManager::cleanup() {
+    Logger::log("Cleaning up Input manager...");
+
+    // TODO: Cleanup logic.
+
+    Logger::log("Input manager cleaned up.");
 }
