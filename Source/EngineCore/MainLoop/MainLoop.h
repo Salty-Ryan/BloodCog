@@ -2,11 +2,18 @@
 
 class MainLoop {
 public:
-    MainLoop();
-    ~MainLoop();
+    MainLoop();  // Constructor.
+    ~MainLoop();  // Destructor.
 
-    void run();  // The main game loop.
-    void handleEvents();  // Handle user input or other events.
-    void update();  // Update game state.
-    void render();  // Render the game.
+    void start();  // Start the main game loop.
+    void stop();   // Stop the main game loop.
+
+private:
+    bool running = true;  // Flag to determine if the game loop is running.
+
+    // TODO: Add other private member variables or methods as needed.
+    // Example:
+    // void handleInput();
+    // void update();
+    // void render();
 };
