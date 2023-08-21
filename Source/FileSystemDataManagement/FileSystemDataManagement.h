@@ -1,14 +1,14 @@
 #pragma once
-#include <map>
 
-class KeyBindings {
+#include <string>
+
+class FileSystemDataManagement {
 public:
-    KeyBindings();
-    ~KeyBindings();
+    FileSystemDataManagement();  // Constructor.
+    ~FileSystemDataManagement();  // Destructor.
 
-    void bindKey(int keyCode, const char* action);
-    const char* getAction(int keyCode);
+    bool saveGameData(const std::string& filePath, const std::string& data);  // Save game data to a file.
+    std::string loadGameData(const std::string& filePath);  // Load game data from a file.
 
-private:
-    std::map<int, const char*> keyMap;  // Map key codes to game actions.
+    // Additional methods for handling other file operations can be added here.
 };
