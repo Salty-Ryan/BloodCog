@@ -59,4 +59,3 @@ void Initialization::shutdownEngine() {
 
     isInitialized = false;
 }
-
