@@ -1,17 +1,15 @@
 #pragma once
+#include <vector>
+#include "Chunk.h"
 
 class World {
 public:
     World();  // Constructor.
     ~World();  // Destructor.
 
-    bool initialize();  // Initialize the World.
-    void updateWorld();  // Update world logic.
-    void cleanup();  // Clean up and release resources.
+    void generateWorld();  // Generate the world with chunks.
+    void renderWorld();  // Render the entire world.
 
 private:
-    // TODO: Add private member variables for chunks, entities, etc.
-    // Example:
-    // std::vector<Chunk*> chunks;
-    // std::vector<Entity*> entities;
+    std::vector<Chunk> chunks;  // Collection of chunks that make up the world.
 };
