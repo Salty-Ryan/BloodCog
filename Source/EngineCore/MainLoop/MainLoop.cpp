@@ -10,15 +10,12 @@ MainLoop::~MainLoop() {
 }
 
 void MainLoop::start() {
-    // TODO: Implement the main game loop logic. This might involve updating game state, rendering, handling input, etc.
-
     Logger::log("Starting main game loop.");
 
     while (running) {
-        // Example loop:
-        // handleInput();
-        // update();
-        // render();
+        handleInput();
+        update();
+        render();
     }
 }
 
@@ -27,13 +24,14 @@ void MainLoop::stop() {
     Logger::log("Stopping main game loop.");
 }
 
-void MainLoop::render() {
-    // Render the game using the RenderingEngine.
-    
-    // TODO: Add rendering logic here.
+void MainLoop::handleInput() {
+    // TODO: Handle user input. This might involve checking for key presses, mouse movements, etc.
 }
 
-void MainLoop::terminate() {  // Added a function to safely terminate the loop.
-    Logger::log("Terminating the main game loop...");
-    isRunning = false;
+void MainLoop::update() {
+    // TODO: Update game state. This might involve updating game objects, physics simulations, AI decisions, etc.
+}
+
+void MainLoop::render() {
+    // TODO: Render the game. This will involve drawing game objects, UI elements, etc. to the screen.
 }
