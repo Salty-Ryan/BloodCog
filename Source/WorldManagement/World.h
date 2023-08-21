@@ -4,7 +4,7 @@
 
 class World {
 public:
-    World();  // Constructor.
+    World(unsigned int seed);  // Constructor with seed for procedural generation.
     ~World();  // Destructor.
 
     void generateWorld();  // Generate the world with chunks.
@@ -13,4 +13,5 @@ public:
 
 private:
     std::vector<Chunk> chunks;  // Collection of chunks that make up the world.
+    unsigned int worldSeed;  // Seed for procedural generation.
 };
