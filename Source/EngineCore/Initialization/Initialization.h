@@ -2,9 +2,15 @@
 
 class Initialization {
 public:
-    Initialization();
-    ~Initialization();
+    Initialization();  // Constructor.
+    ~Initialization();  // Destructor.
 
-    bool setup();  // Sets up the game engine components.
-    void cleanup();  // Cleans up resources before shutting down.
+    bool initializeEngine();  // Initialize the game engine.
+    void shutdownEngine();  // Shutdown the game engine and release resources.
+
+private:
+    // TODO: Add private member variables for initialization state, loaded assets, etc.
+    // Example:
+    // bool isInitialized;
+    // AssetManager assetManager;
 };
