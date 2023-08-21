@@ -1,11 +1,23 @@
 #include "ConfigLoader.h"
+#include "Logger.h"
 
-ConfigLoader::ConfigLoader(const char* filePath) {
-    // Initialize with file path.
+ConfigLoader::ConfigLoader() {
+    Logger::log("ConfigLoader constructor called.");
 }
 
-ConfigLoader::~ConfigLoader() {}
+ConfigLoader::~ConfigLoader() {
+    Logger::log("ConfigLoader destructor called.");
+}
 
-void ConfigLoader::loadConfig() {
-    // Load config values from file.
+bool ConfigLoader::loadConfig(const std::string& filePath) {
+    // TODO: Load configuration from the given file path.
+
+    Logger::log("Loading configuration from: " + filePath);
+    return true;  // Placeholder return.
+}
+
+void ConfigLoader::saveConfig(const std::string& filePath) {
+    // TODO: Save current configuration to the given file path.
+
+    Logger::log("Saving configuration to: " + filePath);
 }
