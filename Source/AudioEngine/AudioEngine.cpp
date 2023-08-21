@@ -26,12 +26,28 @@ bool AudioEngine::initialize() {
 
 void AudioEngine::playSound(const Sound& sound) {
     // TODO: Play the provided sound using the sound buffers and audio context.
+    // For now, we'll just log the sound being played.
     Logger::log("Playing sound: " + sound.getName());
 }
 
 void AudioEngine::stopSound(const Sound& sound) {
     // TODO: Stop the provided sound using the sound buffers and audio context.
     Logger::log("Stopping sound: " + sound.getName());
+}
+
+bool AudioEngine::loadSoundBuffer(const std::string& filePath) {
+    // Create a new SoundBuffer and load the sound data from the file.
+    SoundBuffer* buffer = new SoundBuffer();
+    if (!buffer->loadFromFile(filePath)) {
+        delete buffer;
+        Logger::log("Failed to load sound buffer from: " + filePath);
+        return false;
+    }
+
+    // Add the buffer to the list of sound buffers.
+    soundBuffers.push_back(buffer);
+    Logger::log("Loaded sound buffer from: " + filePath);
+    return true;
 }
 
 void AudioEngine::cleanup() {
@@ -43,7 +59,12 @@ void AudioEngine::cleanup() {
         context = nullptr;
     }
 
-    // TODO: Cleanup other audio engine components, like sound buffers.
+    // Cleanup sound buffers.
+    for (SoundBuffer* buffer : soundBuffers) {
+        buffer->release();
+        delete buffer;
+    }
+    soundBuffers.clear();
 
     Logger::log("Audio engine components successfully cleaned up.");
 }
