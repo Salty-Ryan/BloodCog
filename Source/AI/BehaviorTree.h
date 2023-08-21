@@ -1,5 +1,7 @@
 #pragma once
 
+class BehaviorTreeNode;  // Forward declaration for BehaviorTreeNode class.
+
 class BehaviorTree {
 public:
     BehaviorTree();
@@ -8,5 +10,5 @@ public:
     void execute();  // Execute the behavior tree.
 
 private:
-    // Nodes and structures for the behavior tree.
+    BehaviorTreeNode* rootNode;  // Root node of the behavior tree.
 };
