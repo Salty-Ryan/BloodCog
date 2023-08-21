@@ -2,14 +2,17 @@
 
 class Camera {
 public:
-    Camera();
-    ~Camera();
+    Camera();  // Constructor.
+    ~Camera();  // Destructor.
 
-    void update();  // Update camera's position, rotation, etc.
-    void setPosition(float x, float y, float z);
-    void setRotation(float pitch, float yaw, float roll);
+    void move(float deltaX, float deltaY, float deltaZ);  // Move the camera.
+    void rotate(float pitch, float yaw);  // Rotate the camera.
+    void zoom(float amount);  // Zoom the camera.
 
 private:
-    float posX, posY, posZ;
-    float pitch, yaw, roll;  // rotation angles
+    // TODO: Add private member variables for camera position, rotation, zoom level, etc.
+    // Example:
+    // Vector3 position;
+    // float pitch, yaw;
+    // float zoomLevel;
 };
