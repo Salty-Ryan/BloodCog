@@ -43,4 +43,3 @@ void PhysicsEngine::cleanup() {
     // TODO: Add specific cleanup code here.
 
     Logger::log("Physics engine components successfully cleaned up.");
-}
