@@ -16,11 +16,16 @@ void World::generateWorld() {
 }
 
 void World::renderWorld() {
-    // TODO: Render all chunks and entities in the world.
-
+    // Render all chunks and entities in the world.
     for (auto& chunk : chunks) {
         chunk.render();
     }
 
     Logger::log("Rendering world.");
+}
+
+void World::updateWorld(float deltaTime) {
+    // TODO: Update world state, such as moving entities, updating physics, etc.
+
+    Logger::log("Updating world.");
 }
