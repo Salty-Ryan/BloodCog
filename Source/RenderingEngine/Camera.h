@@ -10,9 +10,7 @@ public:
     void zoom(float amount);  // Zoom the camera.
 
 private:
-    // TODO: Add private member variables for camera position, rotation, zoom level, etc.
-    // Example:
-    // Vector3 position;
-    // float pitch, yaw;
-    // float zoomLevel;
+    Vector3 position;  // Camera position.
+    float pitch, yaw;  // Camera rotation angles.
+    float zoomLevel;   // Camera zoom level.
 };
