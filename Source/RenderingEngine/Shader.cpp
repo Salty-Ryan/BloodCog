@@ -1,17 +1,36 @@
 #include "Shader.h"
+#include "Logger.h"
 
-Shader::Shader(const char* vertexPath, const char* fragmentPath) {
-    loadFromFile(vertexPath, fragmentPath);
+Shader::Shader() {
+    Logger::log("Shader constructor called.");
 }
 
 Shader::~Shader() {
-    // Destructor logic, e.g., delete shader.
+    cleanup();
+    Logger::log("Shader destructor called.");
 }
 
-void Shader::use() {
-    // Activate the shader.
+bool Shader::load(const std::string& vertexPath, const std::string& fragmentPath) {
+    // TODO: Load the vertex and fragment shaders from the given paths.
+
+    Logger::log("Loading shaders.");
+    return true;  // Placeholder return.
 }
 
-void Shader::loadFromFile(const char* vertexPath, const char* fragmentPath) {
-    // Load vertex and fragment shaders from files and compile them.
+void Shader::bind() {
+    // TODO: Bind this shader for rendering.
+
+    Logger::log("Binding shader.");
+}
+
+void Shader::unbind() {
+    // TODO: Unbind this shader.
+
+    Logger::log("Unbinding shader.");
+}
+
+void Shader::cleanup() {
+    // TODO: Clean up shader resources.
+
+    Logger::log("Cleaning up shader.");
 }
