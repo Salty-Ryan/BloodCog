@@ -11,24 +11,17 @@ RenderingEngine::~RenderingEngine() {
 }
 
 bool RenderingEngine::initialize() {
+    // TODO: Implement initialization logic for the rendering engine.
     Logger::log("Initializing rendering engine...");
-
-    // TODO: Initialization logic.
-
-    Logger::log("Rendering engine initialized.");
     return true;
 }
 
 void RenderingEngine::render() {
-    // TODO: Rendering logic.
-
+    // TODO: Implement the overall rendering logic.
     Logger::log("Rendering frame.");
 }
 
 void RenderingEngine::cleanup() {
+    // TODO: Implement cleanup logic for the rendering engine.
     Logger::log("Cleaning up rendering engine...");
-
-    // TODO: Cleanup logic.
-
-    Logger::log("Rendering engine cleaned up.");
 }
