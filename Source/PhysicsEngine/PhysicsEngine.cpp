@@ -1,34 +1,34 @@
-#include "RenderingEngine.h"
+#include "PhysicsEngine.h"
 #include "Logger.h"
 
-RenderingEngine::RenderingEngine() {
-    Logger::log("RenderingEngine constructor called.");
+PhysicsEngine::PhysicsEngine() {
+    Logger::log("PhysicsEngine constructor called.");
 }
 
-RenderingEngine::~RenderingEngine() {
+PhysicsEngine::~PhysicsEngine() {
     cleanup();
-    Logger::log("RenderingEngine destructor called.");
+    Logger::log("PhysicsEngine destructor called.");
 }
 
-bool RenderingEngine::initialize() {
-    Logger::log("Initializing rendering engine...");
+bool PhysicsEngine::initialize() {
+    Logger::log("Initializing physics engine...");
 
-    // TODO: Initialization logic. This might involve setting up the rendering context, loading shaders, initializing meshes, etc.
+    // TODO: Initialization logic. Set up the physics simulation context, load physics materials, initialize rigid bodies, etc.
 
-    Logger::log("Rendering engine initialized.");
+    Logger::log("Physics engine initialized.");
     return true;
 }
 
-void RenderingEngine::render() {
-    // TODO: Rendering logic. This will involve drawing game objects, UI elements, etc. to the screen.
+void PhysicsEngine::simulate() {
+    // TODO: Physics simulation logic. Update the positions and velocities of game objects based on forces, collisions, etc.
 
-    Logger::log("Rendering frame.");
+    Logger::log("Simulating physics.");
 }
 
-void RenderingEngine::cleanup() {
-    Logger::log("Cleaning up rendering engine...");
+void PhysicsEngine::cleanup() {
+    Logger::log("Cleaning up physics engine...");
 
-    // TODO: Cleanup logic. This might involve releasing any resources associated with the rendering context, shaders, meshes, etc.
+    // TODO: Cleanup logic. Release resources associated with the physics simulation context, physics materials, rigid bodies, etc.
 
-    Logger::log("Rendering engine cleaned up.");
+    Logger::log("Physics engine cleaned up.");
 }
