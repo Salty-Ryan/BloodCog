@@ -1,21 +1,34 @@
 #include "RenderingEngine.h"
+#include "Logger.h"
 
 RenderingEngine::RenderingEngine() {
-    // Constructor logic, if any.
+    Logger::log("RenderingEngine constructor called.");
 }
 
 RenderingEngine::~RenderingEngine() {
-    // Destructor logic, if any.
+    cleanup();
+    Logger::log("RenderingEngine destructor called.");
 }
 
-void RenderingEngine::initialize() {
-    // Set up rendering context, load shaders, etc.
+bool RenderingEngine::initialize() {
+    Logger::log("Initializing rendering engine...");
+
+    // TODO: Initialization logic.
+
+    Logger::log("Rendering engine initialized.");
+    return true;
 }
 
-void RenderingEngine::draw() {
-    // Draw the game scene, objects, characters, etc.
+void RenderingEngine::render() {
+    // TODO: Rendering logic.
+
+    Logger::log("Rendering frame.");
 }
 
 void RenderingEngine::cleanup() {
-    // Clean up rendering resources, unload shaders, etc.
+    Logger::log("Cleaning up rendering engine...");
+
+    // TODO: Cleanup logic.
+
+    Logger::log("Rendering engine cleaned up.");
 }
