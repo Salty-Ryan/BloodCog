@@ -6,29 +6,21 @@ World::World() {
 }
 
 World::~World() {
-    cleanup();
     Logger::log("World destructor called.");
 }
 
-bool World::initialize() {
-    Logger::log("Initializing World...");
+void World::generateWorld() {
+    // TODO: Implement world generation logic. This might involve generating multiple chunks.
 
-    // TODO: Initialization logic.
-
-    Logger::log("World initialized.");
-    return true;
+    Logger::log("Generating world.");
 }
 
-void World::updateWorld() {
-    // TODO: World update logic.
+void World::renderWorld() {
+    // TODO: Render all chunks and entities in the world.
 
-    Logger::log("Updating World.");
-}
+    for (auto& chunk : chunks) {
+        chunk.render();
+    }
 
-void World::cleanup() {
-    Logger::log("Cleaning up World...");
-
-    // TODO: Cleanup logic.
-
-    Logger::log("World cleaned up.");
+    Logger::log("Rendering world.");
 }
