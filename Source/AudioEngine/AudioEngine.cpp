@@ -1,23 +1,49 @@
-#include "AudioContext.h"
-#include "Logger.h"
+#include "AudioEngine.h"
 
-AudioContext::AudioContext() {
-    Logger::log("AudioContext constructor called.");
+AudioEngine::AudioEngine() : context(nullptr) {
+    Logger::log("AudioEngine constructor called.");
 }
 
-AudioContext::~AudioContext() {
+AudioEngine::~AudioEngine() {
     cleanup();
-    Logger::log("AudioContext destructor called.");
+    Logger::log("AudioEngine destructor called.");
 }
 
-bool AudioContext::initialize() {
-    // TODO: Initialize the audio context.
-    Logger::log("AudioContext initialized.");
+bool AudioEngine::initialize() {
+    Logger::log("Initializing audio engine...");
+
+    context = new AudioContext();
+    if (!context->initialize()) {
+        Logger::log("Failed to initialize audio context.");
+        return false;
+    }
+
+    // TODO: Initialize other audio engine components, like sound buffers.
+
+    Logger::log("Audio engine successfully initialized.");
     return true;
 }
 
-void AudioContext::cleanup() {
-    // TODO: Cleanup the audio context.
-    Logger::log("AudioContext cleaned up.");
+void AudioEngine::playSound(const Sound& sound) {
+    // TODO: Play the provided sound using the sound buffers and audio context.
+    Logger::log("Playing sound: " + sound.getName());
 }
 
+void AudioEngine::stopSound(const Sound& sound) {
+    // TODO: Stop the provided sound using the sound buffers and audio context.
+    Logger::log("Stopping sound: " + sound.getName());
+}
+
+void AudioEngine::cleanup() {
+    Logger::log("Cleaning up audio engine components...");
+
+    if (context) {
+        context->cleanup();
+        delete context;
+        context = nullptr;
+    }
+
+    // TODO: Cleanup other audio engine components, like sound buffers.
+
+    Logger::log("Audio engine components successfully cleaned up.");
+}
