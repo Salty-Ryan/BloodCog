@@ -2,12 +2,16 @@
 
 class AIManager {
 public:
-    AIManager();
-    ~AIManager();
+    AIManager();  // Constructor.
+    ~AIManager();  // Destructor.
 
-    void update();  // Update all AI entities.
-    void addEntity(/*Entity or AI type*/);  // Add an AI entity to be managed.
+    bool initialize();  // Initialize the AI manager.
+    void updateAI();  // Update AI logic.
+    void cleanup();  // Clean up and release resources.
 
 private:
-    // List or array of AI entities.
+    // TODO: Add private member variables for AI agents, behaviors, etc.
+    // Example:
+    // std::vector<AIAgent*> agents;
+    // BehaviorTree* behaviorTree;
 };
