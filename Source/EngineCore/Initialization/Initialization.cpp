@@ -1,24 +1,38 @@
 #include "Initialization.h"
-#include "Logger.h"
 
-Initialization::Initialization() {
+Initialization::Initialization() : isInitialized(false) {
     Logger::log("Initialization constructor called.");
 }
 
 Initialization::~Initialization() {
+    if (isInitialized) {
+        shutdownEngine();
+    }
     Logger::log("Initialization destructor called.");
 }
 
 bool Initialization::initializeEngine() {
-    // TODO: Implement engine initialization logic. This might involve setting up rendering context, loading assets, etc.
-
     Logger::log("Initializing engine.");
-    return true;  // Placeholder return.
+
+    // Initialize the audio engine.
+    if (!audioEngine.initialize()) {
+        Logger::log("Failed to initialize audio engine.");
+        return false;
+    }
+
+    // TODO: Initialize other core engine components, like RenderingEngine, PhysicsEngine, etc.
+
+    isInitialized = true;
+    return true;
 }
 
 void Initialization::shutdownEngine() {
-    // TODO: Implement engine shutdown logic. This might involve releasing resources, saving state, etc.
-
     Logger::log("Shutting down engine.");
-}
 
+    // Shutdown the audio engine.
+    audioEngine.cleanup();
+
+    // TODO: Shutdown other core engine components.
+
+    isInitialized = false;
+}
