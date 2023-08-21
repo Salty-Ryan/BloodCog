@@ -1,15 +1,9 @@
 #pragma once
 
-#include "Sound.h"  // Assuming you have a Sound class for individual sound assets.
-#include "Logger.h"  // For logging purposes.
-
-class AudioContext {
-public:
-    AudioContext();
-    ~AudioContext();
-
-    bool initialize();  // Initialize the audio context.
-    void cleanup();     // Clean up the audio context.
+#include "Sound.h"
+#include "Logger.h"
+#include "AudioContext.h"
+#include "SoundBuffer.h"  // Include the SoundBuffer header.
 
 class AudioEngine {
 public:
@@ -22,9 +16,6 @@ public:
     void cleanup();  // Clean up and release resources.
 
 private:
-    // TODO: Add private member variables for audio context, sound buffers, etc.
-
-    // Example:
-    // AudioContext* context;
-    // std::vector<SoundBuffer*> soundBuffers;
+    AudioContext* context;  // Audio context.
+    std::vector<SoundBuffer*> soundBuffers;  // List of sound buffers.
 };
