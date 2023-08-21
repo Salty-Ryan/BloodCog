@@ -1,8 +1,9 @@
 #include "MainLoop.h"
 #include "Logger.h"
-#include "InputManager.h"       // Assuming you have this class
-#include "GameStateManager.h"   // Assuming you have this class
-#include "RenderingEngine.h"    // Assuming you have this class
+#include "InputManager.h"
+#include "GameStateManager.h"
+#include "RenderingEngine.h"
+#include <chrono>  // For time functions
 
 const float FIXED_TIME_STEP = 1.0f / 60.0f;  // 60 updates per second.
 float accumulator = 0.0f;
@@ -18,10 +19,10 @@ MainLoop::~MainLoop() {
 void MainLoop::start() {
     Logger::log("Starting main game loop.");
 
-    float previousTime = getCurrentTime();
+    auto previousTime = std::chrono::high_resolution_clock::now();
     while (running) {
-        float currentTime = getCurrentTime();
-        float deltaTime = currentTime - previousTime;
+        auto currentTime = std::chrono::high_resolution_clock::now();
+        float deltaTime = std::chrono::duration<float>(currentTime - previousTime).count();
         previousTime = currentTime;
 
         accumulator += deltaTime;
@@ -35,11 +36,6 @@ void MainLoop::start() {
 
         render(accumulator / FIXED_TIME_STEP);  // Interpolation factor.
     }
-}
-
-float MainLoop::getCurrentTime() {
-    // TODO: Implement this method to return the current time.
-    return 0.0f;  // Placeholder
 }
 
 void MainLoop::handleInput() {
@@ -56,3 +52,4 @@ void MainLoop::render(float interpolationFactor) {
     // Render the game.
     RenderingEngine::getInstance().render(interpolationFactor);
 }
+
