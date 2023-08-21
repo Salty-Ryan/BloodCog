@@ -2,13 +2,16 @@
 
 class InputManager {
 public:
-    InputManager();
-    ~InputManager();
+    InputManager();  // Constructor.
+    ~InputManager();  // Destructor.
 
-    bool isKeyPressed(int keyCode);
-    bool isMousePressed(int buttonCode);
-    // ... other input methods.
+    bool initialize();  // Initialize the Input manager.
+    void handleInput();  // Handle user input.
+    void cleanup();  // Clean up and release resources.
 
 private:
-    // Input state data.
+    // TODO: Add private member variables for key states, mouse states, etc.
+    // Example:
+    // KeyState* currentKeyStates;
+    // MouseState currentMouseState;
 };
