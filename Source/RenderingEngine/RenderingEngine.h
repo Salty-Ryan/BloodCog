@@ -2,10 +2,17 @@
 
 class RenderingEngine {
 public:
-    RenderingEngine();
-    ~RenderingEngine();
+    RenderingEngine();  // Constructor.
+    ~RenderingEngine();  // Destructor.
 
-    void initialize();  // Initialize rendering context, shaders, etc.
-    void draw();  // Draw the game scene.
-    void cleanup();  // Clean up rendering resources.
+    bool initialize();  // Initialize the rendering engine.
+    void render();  // Render a frame.
+    void cleanup();  // Clean up and release resources.
+
+private:
+    // TODO: Add private member variables for rendering context, shaders, meshes, etc.
+    // Example:
+    // RenderContext* context;
+    // std::vector<Shader*> shaders;
+    // std::vector<Mesh*> meshes;
 };
