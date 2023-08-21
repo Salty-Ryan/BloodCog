@@ -1,10 +1,17 @@
 #include "Collider.h"
+#include "Logger.h"
 
-Collider::Collider() {}
+Collider::Collider() {
+    Logger::log("Collider constructor called.");
+}
 
-Collider::~Collider() {}
+Collider::~Collider() {
+    Logger::log("Collider destructor called.");
+}
 
-bool Collider::checkCollision(const Collider& other) {
-    // Check for collision with another collider.
-    return false;  // Placeholder, you'll need to implement the actual collision detection.
+bool Collider::checkCollision(const Collider& other) const {
+    // TODO: Implement collision detection logic.
+
+    Logger::log("Checking collision.");
+    return false;  // Placeholder return.
 }
