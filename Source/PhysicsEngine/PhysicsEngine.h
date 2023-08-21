@@ -1,17 +1,18 @@
 #pragma once
 
-class PhysicsEngine {
+class RenderingEngine {
 public:
-    PhysicsEngine();  // Constructor.
-    ~PhysicsEngine();  // Destructor.
+    RenderingEngine();  // Constructor.
+    ~RenderingEngine();  // Destructor.
 
-    bool initialize();  // Initialize the physics engine.
-    void simulate(float deltaTime);  // Simulate physics for a given time step.
+    bool initialize();  // Initialize the rendering engine.
+    void render();  // Render a frame.
     void cleanup();  // Clean up and release resources.
 
 private:
-    // TODO: Add private member variables for physics world, colliders, etc.
+    // TODO: Add private member variables for rendering context, shaders, meshes, etc.
     // Example:
-    // PhysicsWorld* world;
-    // std::vector<Collider*> colliders;
+    // RenderContext* context;
+    // std::vector<Shader*> shaders;
+    // std::vector<Mesh*> meshes;
 };
