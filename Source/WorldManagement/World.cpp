@@ -1,9 +1,10 @@
 #include "World.h"
 #include "Logger.h"
-#include "Chunk.h"  // Assuming you have a Chunk class
+#include "Chunk.h"
 
 World::World() {
     Logger::log("World constructor called.");
+    generateWorld();  // Generate the world when the World object is created.
 }
 
 World::~World() {
@@ -11,31 +12,30 @@ World::~World() {
 }
 
 void World::generateWorld() {
-    // TODO: Implement world generation logic. This might involve generating multiple chunks.
-    // For demonstration purposes, we'll generate a few chunks here.
+    Logger::log("Generating world.");
+
+    // Generate a fixed number of chunks for demonstration purposes.
     for (int i = 0; i < 10; ++i) {
         Chunk chunk;
+        chunk.generateTerrain();  // Generate terrain for each chunk.
         chunks.push_back(chunk);
     }
-
-    Logger::log("Generating world.");
 }
 
 void World::renderWorld() {
-    // Render all chunks and entities in the world.
+    Logger::log("Rendering world.");
+
+    // Render all chunks.
     for (auto& chunk : chunks) {
         chunk.render();
     }
-
-    Logger::log("Rendering world.");
 }
 
 void World::updateWorld(float deltaTime) {
-    // TODO: Update world state, such as moving entities, updating physics, etc.
-    // For demonstration purposes, we'll update each chunk here.
-    for (auto& chunk : chunks) {
-        chunk.update(deltaTime);
-    }
-
     Logger::log("Updating world.");
+
+    // Update each chunk.
+    for (auto& chunk : chunks) {
+        // TODO: Implement chunk update logic.
+    }
 }
