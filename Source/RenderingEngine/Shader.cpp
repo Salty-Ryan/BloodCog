@@ -11,26 +11,22 @@ Shader::~Shader() {
 }
 
 bool Shader::load(const std::string& vertexPath, const std::string& fragmentPath) {
-    // TODO: Load the vertex and fragment shaders from the given paths.
-
+    // TODO: Implement loading logic for vertex and fragment shaders.
     Logger::log("Loading shaders.");
-    return true;  // Placeholder return.
+    return true;
 }
 
 void Shader::bind() {
-    // TODO: Bind this shader for rendering.
-
+    // TODO: Implement shader binding logic.
     Logger::log("Binding shader.");
 }
 
 void Shader::unbind() {
-    // TODO: Unbind this shader.
-
+    // TODO: Implement shader unbinding logic.
     Logger::log("Unbinding shader.");
 }
 
 void Shader::cleanup() {
-    // TODO: Clean up shader resources.
-
+    // TODO: Implement cleanup logic for the shader.
     Logger::log("Cleaning up shader.");
 }
