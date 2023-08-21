@@ -1,9 +1,18 @@
 #include "BehaviorTree.h"
+#include "Logger.h"
 
-BehaviorTree::BehaviorTree() {}
+BehaviorTree::BehaviorTree() : rootNode(nullptr) {
+    Logger::log("BehaviorTree constructor called.");
+}
 
-BehaviorTree::~BehaviorTree() {}
+BehaviorTree::~BehaviorTree() {
+    // TODO: Cleanup logic for behavior tree nodes.
+    Logger::log("BehaviorTree destructor called.");
+}
 
 void BehaviorTree::execute() {
-    // Execute the behavior tree nodes.
+    if (rootNode) {
+        rootNode->execute();
+    }
+    Logger::log("Executing behavior tree.");
 }
