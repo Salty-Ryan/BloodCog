@@ -1,16 +1,23 @@
 #pragma once
+#include <vector>
+
+// Forward declaration for Entity class.
+// Assuming you have an Entity class that represents game objects within a chunk.
+class Entity;
 
 class Chunk {
 public:
-    Chunk();  // Constructor.
-    ~Chunk();  // Destructor.
+    Chunk();
+    ~Chunk();
 
-    void generateTerrain();  // Generate the terrain for this chunk.
-    void render();  // Render the chunk.
+    void generateTerrain();
+    void render();
 
 private:
-    // TODO: Add private member variables for terrain data, entities in the chunk, etc.
-    // Example:
+    // Terrain data for the chunk.
+    // TODO: Define a TerrainData class or struct that contains data about the terrain in the chunk.
     // TerrainData terrain;
-    // std::vector<Entity> entities;
+
+    // Entities within the chunk.
+    std::vector<Entity> entities;
 };
