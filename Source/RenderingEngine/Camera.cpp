@@ -1,21 +1,28 @@
 #include "Camera.h"
+#include "Logger.h"
 
-Camera::Camera() : posX(0), posY(0), posZ(0), pitch(0), yaw(0), roll(0) {}
-
-Camera::~Camera() {}
-
-void Camera::update() {
-    // Update camera's position, rotation, etc.
+Camera::Camera() {
+    Logger::log("Camera constructor called.");
 }
 
-void Camera::setPosition(float x, float y, float z) {
-    posX = x;
-    posY = y;
-    posZ = z;
+Camera::~Camera() {
+    Logger::log("Camera destructor called.");
 }
 
-void Camera::setRotation(float p, float y, float r) {
-    pitch = p;
-    yaw = y;
-    roll = r;
+void Camera::move(float deltaX, float deltaY, float deltaZ) {
+    // TODO: Move the camera based on the deltas.
+
+    Logger::log("Moving camera.");
+}
+
+void Camera::rotate(float pitch, float yaw) {
+    // TODO: Rotate the camera based on pitch and yaw values.
+
+    Logger::log("Rotating camera.");
+}
+
+void Camera::zoom(float amount) {
+    // TODO: Zoom (or dolly) the camera based on the amount.
+
+    Logger::log("Zooming camera.");
 }
