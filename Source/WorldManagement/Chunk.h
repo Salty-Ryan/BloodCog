@@ -1,23 +1,17 @@
 #pragma once
 #include <vector>
+#include "Chunk.h"
 
-// Forward declaration for Entity class.
-// Assuming you have an Entity class that represents game objects within a chunk.
-class Entity;
-
-class Chunk {
+class World {
 public:
-    Chunk();
-    ~Chunk();
+    World(unsigned int seed);  // Constructor with seed for procedural generation.
+    ~World();  // Destructor.
 
-    void generateTerrain();
-    void render();
+    void generateWorld();  // Generate the world with chunks.
+    void renderWorld();  // Render the entire world.
+    void updateWorld(float deltaTime);  // Update the world state.
 
 private:
-    // Terrain data for the chunk.
-    // TODO: Define a TerrainData class or struct that contains data about the terrain in the chunk.
-    // TerrainData terrain;
-
-    // Entities within the chunk.
-    std::vector<Entity> entities;
+    std::vector<Chunk> chunks;  // Collection of chunks that make up the world.
+    unsigned int worldSeed;  // Seed for procedural generation.
 };
