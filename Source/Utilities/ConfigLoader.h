@@ -1,5 +1,6 @@
 #pragma once
 #include <string>
+#include <map>
 
 class ConfigLoader {
 public:
@@ -10,7 +11,5 @@ public:
     void saveConfig(const std::string& filePath);  // Save current configuration to a file.
 
 private:
-    // TODO: Add private member variables for storing configuration data.
-    // Example:
-    // std::map<std::string, std::string> configData;
+    std::map<std::string, std::string> configData;  // Store configuration data as key-value pairs.
 };
