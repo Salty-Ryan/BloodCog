@@ -2,12 +2,16 @@
 
 class World {
 public:
-    World();
-    ~World();
+    World();  // Constructor.
+    ~World();  // Destructor.
 
-    void generate();  // Generate the game world.
-    void update();    // Update the world state.
+    bool initialize();  // Initialize the World.
+    void updateWorld();  // Update world logic.
+    void cleanup();  // Clean up and release resources.
 
 private:
-    // List or array of chunks, entities, and players.
+    // TODO: Add private member variables for chunks, entities, etc.
+    // Example:
+    // std::vector<Chunk*> chunks;
+    // std::vector<Entity*> entities;
 };
