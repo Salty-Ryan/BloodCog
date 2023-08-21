@@ -1,13 +1,17 @@
 #pragma once
 
-class Rigidbody {
+class RigidBody {
 public:
-    Rigidbody();
-    ~Rigidbody();
+    RigidBody();  // Constructor.
+    ~RigidBody();  // Destructor.
 
-    void applyForce(float x, float y, float z);  // Apply a force to the rigidbody.
+    void applyForce(const Vector3& force);  // Apply a force to the rigid body.
+    void update(float deltaTime);  // Update the rigid body's state.
 
 private:
-    float mass;
-    float velocityX, velocityY, velocityZ;
+    // TODO: Add private member variables for mass, velocity, acceleration, etc.
+    // Example:
+    // float mass;
+    // Vector3 velocity;
+    // Vector3 acceleration;
 };
