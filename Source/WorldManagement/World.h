@@ -9,6 +9,7 @@ public:
 
     void generateWorld();  // Generate the world with chunks.
     void renderWorld();  // Render the entire world.
+    void updateWorld(float deltaTime);  // Update the world state.
 
 private:
     std::vector<Chunk> chunks;  // Collection of chunks that make up the world.
