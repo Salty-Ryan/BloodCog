@@ -1,11 +1,10 @@
 #pragma once
+#include <string>
 
 class Logger {
 public:
-    static void logMessage(const char* message);
-    static void logWarning(const char* warning);
-    static void logError(const char* error);
+    static void log(const std::string& message);  // Log a general message.
+    static void error(const std::string& message);  // Log an error message.
 
-private:
-    // File or stream to write logs to.
+    // Note: The Logger class is designed as a static utility class, so we don't need a constructor or destructor.
 };
