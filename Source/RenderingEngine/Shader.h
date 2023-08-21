@@ -12,8 +12,6 @@ public:
     void cleanup();  // Clean up shader resources.
 
 private:
-    // TODO: Add private member variables for shader IDs, uniform locations, etc.
-    // Example:
-    // unsigned int shaderID;
-    // std::map<std::string, int> uniformLocations;
+    unsigned int shaderID;  // ID for the shader program.
+    // TODO: Add other private member variables for shader attributes, uniform locations, etc.
 };
