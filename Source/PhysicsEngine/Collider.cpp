@@ -10,8 +10,7 @@ Collider::~Collider() {
 }
 
 bool Collider::checkCollision(const Collider& other) const {
-    // TODO: Implement collision detection logic.
-    // This is a placeholder. The actual implementation will depend on the type of colliders (e.g., AABB, sphere, etc.)
+    // TODO: Implement collision detection logic based on the type of colliders (e.g., AABB, sphere, etc.)
 
     Logger::log("Checking collision.");
     return false;  // Placeholder return.
