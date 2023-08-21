@@ -1,6 +1,9 @@
 #include "MainLoop.h"
 #include "Logger.h"
 
+const float FIXED_TIME_STEP = 1.0f / 60.0f;  // 60 updates per second.
+float accumulator = 0.0f;
+
 MainLoop::MainLoop() {
     Logger::log("MainLoop constructor called.");
 }
@@ -12,26 +15,23 @@ MainLoop::~MainLoop() {
 void MainLoop::start() {
     Logger::log("Starting main game loop.");
 
+    float previousTime = getCurrentTime();
     while (running) {
+        float currentTime = getCurrentTime();
+        float deltaTime = currentTime - previousTime;
+        previousTime = currentTime;
+
+        accumulator += deltaTime;
+
         handleInput();
-        update();
-        render();
+
+        while (accumulator >= FIXED_TIME_STEP) {
+            update(FIXED_TIME_STEP);
+            accumulator -= FIXED_TIME_STEP;
+        }
+
+        render(accumulator / FIXED_TIME_STEP);  // Interpolation factor.
     }
 }
 
-void MainLoop::stop() {
-    running = false;
-    Logger::log("Stopping main game loop.");
-}
-
-void MainLoop::handleInput() {
-    // TODO: Handle user input. This might involve checking for key presses, mouse movements, etc.
-}
-
-void MainLoop::update() {
-    // TODO: Update game state. This might involve updating game objects, physics simulations, AI decisions, etc.
-}
-
-void MainLoop::render() {
-    // TODO: Render the game. This will involve drawing game objects, UI elements, etc. to the screen.
-}
+// ... rest of the methods remain unchanged ...
