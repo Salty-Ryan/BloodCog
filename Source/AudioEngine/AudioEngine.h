@@ -3,16 +3,13 @@
 #include "Sound.h"  // Assuming you have a Sound class for individual sound assets.
 #include "Logger.h"  // For logging purposes.
 
-class SoundBuffer {
+class AudioContext {
 public:
-    SoundBuffer();
-    ~SoundBuffer();
+    AudioContext();
+    ~AudioContext();
 
-    bool loadFromFile(const std::string& filePath);  // Load audio data from a file.
-    void release();  // Release the buffer.
-
-    // Additional methods and members as needed.
-};
+    bool initialize();  // Initialize the audio context.
+    void cleanup();     // Clean up the audio context.
 
 class AudioEngine {
 public:
