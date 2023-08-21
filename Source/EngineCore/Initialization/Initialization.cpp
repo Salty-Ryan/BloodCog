@@ -2,6 +2,15 @@
 
 Initialization::Initialization() : isInitialized(false) {
     Logger::log("Initialization constructor called.");
+
+    // Load assets.
+    // TODO: Load textures, models, sounds, etc.
+
+    // Set up game systems.
+    // TODO: Initialize rendering engine, physics engine, audio system, etc.
+
+    // Set initial game state.
+    // TODO: Set player's initial position, set up game world, etc.
 }
 
 Initialization::~Initialization() {
