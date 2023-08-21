@@ -14,6 +14,17 @@ MainLoop::~MainLoop() {
 
 void MainLoop::start() {
     Logger::log("Starting main game loop.");
+    while (running) {
+        // Process input.
+        InputManager::getInstance().processInput();
+
+        // Update game state based on current state.
+        GameStateManager::getInstance().update(FIXED_TIME_STEP);
+
+        // Render the game.
+        RenderingEngine::getInstance().render();
+    }
+}
 
     float previousTime = getCurrentTime();
     while (running) {
